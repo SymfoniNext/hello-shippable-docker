@@ -1,0 +1,7 @@
+before_script:
+  - mkdir -p shippable/buildoutput
+script:
+  - go test
+  - go build -o hello main.go
+after_script:
+  - cp -r hello shippable/buildoutput
